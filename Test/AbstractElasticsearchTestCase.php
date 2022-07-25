@@ -166,23 +166,6 @@ abstract class AbstractElasticsearchTestCase extends WebTestCase
     }
 
     /**
-     * Returns service container.
-     *
-     * @param array $kernelOptions Options used passed to kernel if it needs to be initialized.
-     *
-     * @return ContainerInterface
-     */
-    protected function getContainer($kernelOptions = [])
-    {
-        if (null === self::$container) {
-            self::bootKernel($kernelOptions);
-            self::$container = static::$kernel->getContainer();
-        }
-
-        return self::$container;
-    }
-
-    /**
      * Returns manager instance with injected connection if does not exist creates new one.
      *
      * @param string $name Manager name
