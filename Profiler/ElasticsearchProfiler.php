@@ -118,7 +118,7 @@ class ElasticsearchProfiler extends DataCollector
     /**
      * Backward compatibility Layer can be removed when Symfony 2.8 is dropped.
      */
-    protected function cloneVar($var)
+    protected function cloneVar($var): Data
     {
         if (class_exists(Kernel::class) && Kernel::VERSION_ID < 30000) {
             return $var;
