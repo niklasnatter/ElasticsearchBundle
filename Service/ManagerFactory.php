@@ -170,7 +170,8 @@ class ManagerFactory
 
     private function dispatch($eventName, $event)
     {
-        if ($this->eventDispatcher instanceof ContractsEventDispatcherInterface || class_exists(LegacyEventDispatcherProxy::class)) {
+        if ($this->eventDispatcher instanceof ContractsEventDispatcherInterface
+            || class_exists(LegacyEventDispatcherProxy::class)) {
             return $this->eventDispatcher->dispatch($event, $eventName);
         } else {
             return $this->eventDispatcher->dispatch($eventName, $event);
